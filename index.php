@@ -1,3 +1,10 @@
+<?php 
+
+$checkvalue1 = 1;
+$checkvalue2 = 2;
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -31,6 +38,18 @@
               <input class="form-control" type="file" name="archivo" id="archivo" required>
               <input class="btn btn-primary" type="submit" value="Subir Archivo">
             </div>
+            
+            <div class="mt-2">
+
+              Selecciona una operacion:
+
+              <input type="checkbox" name="credito" id="credito" value="" onclick="uncheck()">
+              <label for="credito" class="form-check-label">Creditos</label>
+              
+              <input type="checkbox" name="debito" id="debito" value="" onclick="uncheck()">
+              <label for="debito" class="form-check-label">Debitos</label>
+            </div>
+            
             </form>
         </div>
       </div>
@@ -48,6 +67,24 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <script>
+      function uncheck(){
+        var checkbox1 = document.getElementById("credito");
+        var checkbox2 = document.getElementById("debito"); 
+        
+        checkbox1.onclick = function(){ 
+          if(checkbox1.checked != false){ 
+          checkbox2.checked =null; }
+        } 
+        
+        checkbox2.onclick = function(){ 
+          if(checkbox2.checked != false){ 
+          checkbox1.checked=null;
+          }
+        } 
+      }
   </script>
 </body>
 
